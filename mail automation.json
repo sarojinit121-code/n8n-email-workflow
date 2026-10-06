@@ -1,0 +1,82 @@
+{
+  "name": "mail automation",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtMinute": 5
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "d829173c-17ca-4cc1-9ab0-cba6bc1764e1",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "sendTo": "mohamedalees0@gmail.com",
+        "subject": "hello ! ",
+        "emailType": "text",
+        "message": "I fell happy!!",
+        "options": {
+          "senderName": "sarojini",
+          "replyTo": "ssarojinithanavel@gmail.com",
+          "replyToSenderOnly": true
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "9ec9eba0-6815-461c-8e5f-9820ae85c1de",
+      "name": "Send a message",
+      "webhookId": "97ee64bd-72b3-49ce-88d5-85e827f9d4a0",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "7wbzudaRcsfZH3Pv",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "77fe6970-2378-453d-bf72-b0981d32f6e5",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "537cdffb8af972bdc7f0c3c547b400386c8d4cde6bef72b784cc1b321bc93b9c"
+  },
+  "nodeGroups": [],
+  "id": "aKuw1MDbD9zQE02S",
+  "tags": []
+}
